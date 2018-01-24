@@ -1,0 +1,12 @@
+#report formating options
+json_report: --expand -f pretty -f json -o Reports/cucumber/cucumber.json
+html_report: -f pretty -f html --out Reports/cucumber/test_results.html
+
+#runs tests and gives json report
+run_tests: features/ -p json_report
+
+#use following to run tests using browserstack
+#rake BROWSER=browserstack BS_USERNAME=simonbaire3 BS_AUTHKEY=nhZBoz6HxjnVdypzpavN nodes=2
+
+#use following to call run_tests profile from jenkins
+#bundle exec cucumber -p run_tests
